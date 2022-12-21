@@ -13,22 +13,17 @@ public class GeneBankCreateBTreeTest
     private GeneBankCreateBTreeArguments actualConfiguration;
 
     @Test
-    public void parseArgsWithCache() throws ParseArgumentException
+    public void parse4CorrectArgumentsTest() throws ParseArgumentException
     {
-        args = new String[] {"--cache=1",  "--degree=3", "--gbkfile=hs_ref_chrY.gbk", "--length=5", "--cachesize=200"};
+        args = new String[4];
+        args[0] = "0";
+        args[1] = "20";
+        args[2] = "fileNameGbk.gbk";
+        args[3] = "13";
 
-        expectedConfiguration = new GeneBankCreateBTreeArguments(true, 3, "hs_ref_chrY.gbk", 5, 200, 0);
+        expectedConfiguration = new GeneBankCreateBTreeArguments(false, 20, "fileNameGbk.gbk", 13, 0, 0);
         actualConfiguration = GeneBankCreateBTree.parseArguments(args);
         assertEquals(expectedConfiguration, actualConfiguration);
     }
-    @Test
-    public void parseArgsWithoutCache() throws ParseArgumentException
-    {
-        args = new String[] {"--cache=0",  "--degree=25", "--gbkfile=hs_ref_chrY.gbk", "--length=12", "--debug=1"};
 
-        expectedConfiguration = new GeneBankCreateBTreeArguments(false, 25, "hs_ref_chrY.gbk", 12, 0, 1);
-        actualConfiguration = GeneBankCreateBTree.parseArguments(args);
-        assertEquals(expectedConfiguration, actualConfiguration);
-    }
-    
 }

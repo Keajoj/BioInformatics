@@ -13,12 +13,4 @@ public class GeneBankSearchDatabase
 
     }
 
-    private static void printUsageAndExit(String errorMessage)
-    {
-        String usageMessage = "Usage: java -jar build/libs/GeneBankSearchDatabase.jar <path_to_SQLite_database> " +
-                "<query_file> [<debug_level>]";
-        System.out.println(usageMessage);
-        System.exit(1);
-    }
-
 }

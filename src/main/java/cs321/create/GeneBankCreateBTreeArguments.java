@@ -18,53 +18,6 @@ public class GeneBankCreateBTreeArguments
         this.cacheSize = cacheSize;
         this.debugLevel = debugLevel;
     }
-    /**
-     * Gets whether or not the B-Tree uses a cache.
-     * @return true if using cache, false if not
-     */
-    public boolean isUsingCache() {
-        return useCache;
-    }
-
-    /**
-     * The degree of the B-Tree.
-     * @return int degree
-     */
-    public int getDegree() {
-        return degree;
-    }
-
-    /**
-     * The filename of the .gbk file to be read into the B-Tree.
-     * @return String gbkFileName
-     */
-    public String getGbkFileName() {
-        return gbkFileName;
-    }
-
-    /**
-     * The length of DNA subsequences stored in the B-Tree
-     * @return int subsequenceLength
-     */
-    public int getSubsequenceLength() {
-        return subsequenceLength;
-    }
-
-    /**
-     * The size of the cache that the BTree is using.
-     * @return int cacheSize
-     */
-    public int getCacheSize() {
-        return cacheSize;
-    }
-
-    /**
-     * The desired level of debug information to be written to standard out and standard error streams.
-     * @return int debugLevel
-     */
-    public int getDebugLevel() {
-        return debugLevel;
-    }
 
     @Override
     public boolean equals(Object obj)

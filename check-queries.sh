@@ -11,13 +11,13 @@ do
 	echo
 	echo "Running queryfile " query$i "on $datafile.btree.data.$i.0"
 	echo
-	time java -jar build/libs/GeneBankSearchBTree.jar --cache=0 --degree=0 --btreefile=data/files_gbk/$datafile.btree.data.$i.102 --length=$i --queryfile=data/queries/query$i --debug=1  > data/queries/query$i-$datafile.out
+	time java -jar build/libs/GeneBankSearchBTree.jar --cache=0 --degree=0 --btreefile=$datafile.btree.data.$i.0 --length=$i --queryfile=data/queries/query$i --debug=1  > data/queries/query$i-$datafile.out
 done
 echo
 
 for i in 1 2 3 4 5 6 7 8 9 10 20 31
 do
-	diff -w -y --suppress-common-lines data/queries/query$i-$datafile.out results/query-results/query$i-$datafile.out
+	diff -w data/queries/query$i-$datafile.out results/query-results/query$i-$datafile.out
 	if test "$?" = "0"
 	then
 		echo "----> Query-Test-$i PASSED!"

@@ -1,11 +1,8 @@
 package cs321.btree;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-import cs321.create.GeneBankCreateBTree;
-import cs321.create.GeneBankCreateBTreeArguments;
+import static org.junit.Assert.assertEquals;
 
 public class BTreeTest
 {
@@ -37,29 +34,6 @@ public class BTreeTest
 //            // second child of root has indexNode=2, and so on.
 //            assertEquals(expectedNodesContent[indexNode], bTree.getArrayOfNodeContentsForNodeIndex(indexNode).toString());
 //        }
-    }
-
-    @Test 
-    public void bTreeTest() {
-        GeneBankCreateBTreeArguments args = new GeneBankCreateBTreeArguments(false, 25, "data/files_gbk/hs_ref_chrY.gbk", 12, 0, 1);
-        BTree t = new BTree<>(args);
-        GeneBankCreateBTree.populateBTreeFromGeneBankFile(t, args);
-        t.print();
-        t.closeTree();
-    }
-
-    @Test
-    public void bTestWithLevelOrder() {
-        GeneBankCreateBTreeArguments args = new GeneBankCreateBTreeArguments(false, 2, "hs_ref_chrY.gbk", 12, 0, 1);
-
-        BTree t = new BTree<>(args);
-        
-        for(int i = 0; i < 13; i++) {
-            t.insert((long)i);
-            assertEquals(String.valueOf((long)i), t.levelOrder(0).printKeys());
-        }                   
-        //test 1-13
-        //assert in between each add   
     }
 
 }
